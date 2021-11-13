@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Ticket Concert</title>
@@ -11,9 +11,9 @@
     <script>
         function SubForm() {
             $.ajax({
-                url: 'https://api.apispreadsheets.com/data/20462/',
+                url: 'https://api.apispreadsheets.com/data/20463/',
                 type: 'post',
-                data: $("#myForm").serializeArray(),
+                data: $("#myPayment").serializeArray(),
                 success: function () {
                     alert("Form Data Submitted :)")
                 },
@@ -45,17 +45,17 @@
         <form id="myPayment">
             <div class="form-group">
                 <label for="full_name"></label>
-                <input type="text" id="full_name" name="full_name" placeholder="Full Name">
+                <input type="radio" id="full_name" name="full_name" placeholder="Full Name">
             </div>
 
             <div class="form-group">
                 <label for="email"></label>
-                <input type="text" id="email" name="email" placeholder="Email">
+                <input type="radio" id="email" name="email" placeholder="Email">
             </div>
 
             <div class="form-group">
                 <label for="phone_number"></label>
-                <input type="text" id="phone_number" name="phone_number" placeholder="Phone Number">
+                <input type="radio" id="phone_number" name="phone_number" placeholder="Phone Number">
             </div>
 
             <div class="form-group">
