@@ -11,9 +11,9 @@
     <script>
         function SubForm() {
             $.ajax({
-                url: 'https://api.apispreadsheets.com/data/20463/',
+                url: 'https://api.apispreadsheets.com/data/20462/',
                 type: 'post',
-                data: $("#myPayment").serializeArray(),
+                data: $("#myForm").serializeArray(),
                 success: function () {
                     alert("Form Data Submitted :)")
                 },
@@ -42,7 +42,7 @@
         </div>-->
         <!--Navbar ข้างบน-->
      
-        <form id="myPayment">
+        <form id="myForm">
             <div class="form-group">
                 <label for="full_name"></label>
                 <input type="radio" id="full_name" name="full_name" placeholder="Full Name">
@@ -61,11 +61,11 @@
             <div class="form-group">
                 <label for="slip"></label>
                 <input type="file" id="slip" name="slip" />
-                <button onclick="SubForm()">Submit</button>
+                
             </div>
             
         </form>
-        
+        <button onclick="SubForm()">Submit</button>
         
     </section>
 </body>
