@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Concert</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="payment.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <script>
+        function SubForm() {
+            $.ajax({
+                url: 'https://api.apispreadsheets.com/data/20462/',
+                type: 'post',
+                data: $("#myForm").serializeArray(),
+                success: function () {
+                    alert("Form Data Submitted :)")
+                },
+                error: function () {
+                    alert("There was an error :(")
+                }
+            });
+        }
+    </script>
+
+</head>
+<body>
+    <!--Navbar ข้างบน-->
+    <section>
+        <!--<div class="w3-top">-->
+            <!--เวลาเลื่อนลงแถบจะตามตลอด-->
+            <!--<div class="w3-bar w3-wide w3-padding">
+                <a href="#home" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-white"><b>Ticket</b>Concert</a>-->
+                <!-- Float links to the right. Hide them on small screens -->
+                <!--<div class="w3-right w3-hide-small">
+                    <a href="#home" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-blue">Home</a>
+                    <a href="#howto" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-blue">How to</a>
+                    <a href="#contact" class="w3-bar-item w3-button w3-hover-none w3-text-white w3-hover-text-blue">Contact</a>
+                </div>
+            </div>
+        </div>-->
+        <!--Navbar ข้างบน-->
+     
+        <form id="myPayment">
+            <div class="form-group">
+                <label for="full_name"></label>
+                <input type="text" id="full_name" name="full_name" placeholder="Full Name">
+            </div>
+
+            <div class="form-group">
+                <label for="email"></label>
+                <input type="text" id="email" name="email" placeholder="Email">
+            </div>
+
+            <div class="form-group">
+                <label for="phone_number"></label>
+                <input type="text" id="phone_number" name="phone_number" placeholder="Phone Number">
+            </div>
+
+            <div class="form-group">
+                <label for="slip"></label>
+                <input type="file" id="slip" name="slip" />
+                <button onclick="SubForm()">Submit</button>
+            </div>
+            
+        </form>
+        
+        
+    </section>
+</body>
+</html>
